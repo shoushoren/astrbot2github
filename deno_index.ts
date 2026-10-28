@@ -35,7 +35,7 @@ async function handler(req: Request): Promise<Response> {
       headers: req.headers, // 转发原始请求头
       method: req.method,   // 转发原始请求方法
       body: req.body,     // 转发原始请求体 (支持流式传输)
-      redirect: 'manual', // 重要：不自动处理重定向，将 3xx 响应返回给客户端处理
+      redirect: 'follow', // 重要：不自动处理重定向，将 3xx 响应返回给客户端处理
                            // 或者设为 'follow' 让代理服务器处理重定向
     });
 
